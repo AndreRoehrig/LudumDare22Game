@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head> 
+		<title>LudumDare 22</title> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<style type="text/css"> 
+			  body {margin:0;padding:0; background-color: #110;}
+			  div {margin:0 auto;max-width:1280px;}
+
+			.sjs {
+    			background:#f1f4fe;
+    			border:1px #333 solid;}
+		</style> 
+		<script type="text/javascript" src='sprite.js'></script> 
+		<script type="text/javascript">
+		//declare sprites
+		var zombie;
+		var background1;
+		var tree1;
+		var mine;
+
+			function Engine(scene, layer){
+				this.scene = scene;
+				this.layer = layer;
+				this.inputs = scene.Input();
+				
+				
+
+				//sprites
+				background1 = this.mybackground1 = this.scene.Sprite("background.png",{
+					"layer": this.layer, //Layer zombie will be displayed in.
+					"x": 0, 	//X position of sprite
+					"y": 0, 	//Y position of sprite
+					"w": 8000, 	//width of sprite.
+					"h": 600 	//height of sprite.
+				});
+				
+				tree1 = this.mytree1 = this.scene.Sprite("tree1.png",{
+					"layer": this.layer, //Layer zombie will be displayed in.
+					"x": 600, 	//X position of sprite
+					"y": 170, 	//Y position of sprite
+					"w": 400, 	//width of sprite.
+					"h": 400 	//height of sprite.
+				});
+				
+				tree1 = this.mymine = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer, //Layer zombie will be displayed in.
+					"x": 1000, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 75, 	//width of sprite.
+					"h": 38 	//height of sprite.
+				});
+
+				zombie = this.myzombie = this.scene.Sprite("zombie.png",{
+					"layer": this.layer, //Layer zombie will be displayed in.
+					"x": 20, 	//X position of sprite
+					"y": 325, 	//Y position of sprite
+					"w": 160, 	//width of sprite.
+					"h": 200 	//height of sprite.
+
+				});
+				
+				
+
+
+				
+				
+				
+				//ticker method
+				this.setTicker = function(ticker){
+					this.ticker = ticker;
+				}
+				
+				var speed = 0;
+				var jumping = false;
+				var yv = 0
+				
+				
+
+				function jump() {
+                        
+  					if (!jumping) {
+    					jumping = true;
+    					setTimeout(land, 400);
+  							}
+						}
+
+				function land() {
+                        
+  					jumping = false;
+						}
+				
+				this.run = function(){
+				
+					//get current x and y.
+					nx = this.myzombie.x;
+					ny = this.myzombie.y;
+
+					mx = this.mybackground1.x;
+					my = this.mybackground1.y;
+
+					ox = this.mytree1.x;
+					oy = this.mytree1.y;
+					
+					px = this.mymine.x;
+					py = this.mymine.y;
+
+
+					//Update on keyboard input
+					if(this.inputs.keyboard.left){
+						
+					}
+					if(this.inputs.keyboard.right){
+						ox -= 0.7
+						px -= 0.7
+							this.myzombie.rotate((Math.random()-0.5)*0.02);
+						if(this.myzombie.angle >0.1){
+							this.myzombie.rotate(-0.01)
+							}
+						if(this.myzombie.angle <(-0.1)){
+							this.myzombie.rotate(0.01)
+							}
+					}
+
+					if(ny===325){
+						yv = 0
+					}
+					if(this.inputs.keyboard.up && ny===325){
+							yv -= 7
+					}						
+					if(ny<325){
+						yv = yv + 0.3;
+					}
+					
+					if (!jumping){
+						if(this.inputs.keyboard.up){
+							setTimeout(jump, 20);
+					}	
+					}
+					if(this.inputs.keyboard.down){
+						
+									
+					}
+					nx = nx
+					ny = Math.min(ny + yv,325)
+					if(yv>0 && ny===325)
+            					yv = 0;
+
+					
+					//if (!jumping)   { 
+					//	ny = 325;
+					//		}
+					//if (jumping)    {
+					//	ny = 200;
+					//		}
+					//if(yv>0 && has_contact)
+            				//	yv = 0;
+					//deko
+						
+					//tell them
+					this.myzombie.position(nx,ny);
+					this.myzombie.update();
+					
+					this.mybackground1.position(mx,my);
+					this.mybackground1.offset(0,0);
+					this.mybackground1.update();	
+					
+					this.mytree1.position(ox,oy);
+					this.mytree1.offset(0,0);
+					this.mytree1.update();	
+
+					this.mymine.position(px,py);
+					this.mymine.offset(0,0);
+					this.mymine.update();	
+
+					
+				
+				}
+			}	
+			//Bootstap
+			var bootstrap = function(){
+				
+				var game_height = 600;
+    				var game_width = 800;
+    				var scene = sjs.Scene({w:game_width, h:game_height});
+				var layer = scene.Layer("game_layer");
+				//Load images needed to display
+				scene.loadImages([
+					
+					 ], 
+				 function() {
+						engine = new Engine(scene, layer);
+						ticker = scene.Ticker(function() { engine.run(); });
+						engine.setTicker(ticker);
+						ticker.run();
+					});
+			}
+			//Bootstap Game
+			window.addEventListener("load", bootstrap, false);
+		</script>
+
+	</head> 
+	<body> 
+		<div id='game_map'>
+		
+		
+		</div>
+	</body> 
+</html> 
