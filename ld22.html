@@ -111,8 +111,8 @@
 						
 					}
 					if(this.inputs.keyboard.right){
-						ox -= 0.7
-						px -= 0.7
+						ox -= 2.5
+						px -= 2.5
 							this.myzombie.rotate((Math.random()-0.5)*0.02);
 						if(this.myzombie.angle >0.1){
 							this.myzombie.rotate(-0.01)
@@ -126,7 +126,7 @@
 						yv = 0
 					}
 					if(this.inputs.keyboard.up && ny===325){
-							yv -= 7
+							yv -= 10
 					}						
 					if(ny<325){
 						yv = yv + 0.3;
