@@ -12,6 +12,7 @@
     			border:1px #333 solid;}
 		</style> 
 		<script type="text/javascript" src='sprite.js'></script> 
+		<script src="lib/collision.js"></script>
 		<script type="text/javascript">
 		//declare sprites
 		var zombie;
@@ -47,8 +48,8 @@
 					"layer": this.layer, //Layer zombie will be displayed in.
 					"x": 1000, 	//X position of sprite
 					"y": 500, 	//Y position of sprite
-					"w": 75, 	//width of sprite.
-					"h": 38 	//height of sprite.
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
 				});
 
 				zombie = this.myzombie = this.scene.Sprite("zombie.png",{
@@ -77,18 +78,7 @@
 				
 				
 
-				function jump() {
-                        
-  					if (!jumping) {
-    					jumping = true;
-    					setTimeout(land, 400);
-  							}
-						}
-
-				function land() {
-                        
-  					jumping = false;
-						}
+				
 				
 				this.run = function(){
 				
@@ -121,7 +111,7 @@
 							this.myzombie.rotate(0.01)
 							}
 					}
-
+					//jump
 					if(ny===325){
 						yv = 0
 					}
@@ -132,29 +122,25 @@
 						yv = yv + 0.3;
 					}
 					
-					if (!jumping){
-						if(this.inputs.keyboard.up){
-							setTimeout(jump, 20);
-					}	
-					}
-					if(this.inputs.keyboard.down){
-						
-									
-					}
 					nx = nx
 					ny = Math.min(ny + yv,325)
 					if(yv>0 && ny===325)
             					yv = 0;
+					//end jump
+					if(this.inputs.keyboard.down){
+						
+									
+					}
+					if((this.mymine.isPointIn(80, 500)&& ny === 325)||(this.mymine.isPointIn(138, 500)&& ny === 325))
+						nx+=100
+
+
+
 
 					
-					//if (!jumping)   { 
-					//	ny = 325;
-					//		}
-					//if (jumping)    {
-					//	ny = 200;
-					//		}
-					//if(yv>0 && has_contact)
-            				//	yv = 0;
+
+					
+					
 					//deko
 						
 					//tell them
