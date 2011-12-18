@@ -23,6 +23,7 @@
 		var bloodzombie;
 		var background1;
 		var tree1;
+		var stone;			
 		var mine1;
 		var mine2;
 		var mine3;
@@ -63,6 +64,14 @@
 					"y": 170, 	//Y position of sprite
 					"w": 400, 	//width of sprite.
 					"h": 400 	//height of sprite.
+				});
+
+				stone = this.mystone = this.scene.Sprite("stone.png",{
+					"layer": this.layer,
+					"x": 600, 	//X position of sprite
+					"y": 170, 	//Y position of sprite
+					"w": 200, 	//width of sprite.
+					"h": 200 	//height of sprite.
 				});
 				
 				mine1 = this.mymine1 = this.scene.Sprite("tellermine.png",{
@@ -235,6 +244,7 @@
 				var speed = 0;
 				var jumping = false;
 				var yv = 0
+				var yu = 0
 				
 				
 
@@ -254,6 +264,9 @@
 
 					ox = this.mytree1.x;
 					oy = this.mytree1.y;
+
+					zx = this.mystone.x;
+					zy = this.mystone.y;
 					
 					px1 = this.mymine1.x;
 					py1 = this.mymine1.y;
@@ -327,7 +340,7 @@
 							}
 
 					if(this.inputs.keyboard.right){
-						ox -= 2.5
+						if (nx ===20){ox -= 2.5
 						px1 -= 2.5
 						px2 -= 2.5
 						px3 -= 2.5
@@ -337,10 +350,27 @@
 						px7 -= 2.5
 						px8 -= 2.5
 						px9 -= 2.5
+						zx  -= 2.5
 						if(sx4>30){
 							sx4-=5
 							sx5-=5
-							sx6-=5}
+							sx6-=5}}
+
+						if (nx===-500){ox -= 1.25
+						px1 -= 1.25
+						px2 -= 1.25
+						px3 -= 1.25
+						px4 -= 1.25
+						px5 -= 1.25
+						px6 -= 1.25
+						px7 -= 1.25
+						px8 -= 1.25
+						px9 -= 1.25
+						zx  -= 1.25
+						if(sx4>30){
+							sx4-=2.5
+							sx5-=2.5
+							sx6-=2.5}}
 						
 						
 							
@@ -357,7 +387,7 @@
 						
 							}
 					}
-					//jump
+					//jumpn
 					if((sx1===30 && sx2===300 && sx3 ===580)===false){
 					if(ny===325){
 						yv = 0
@@ -373,7 +403,28 @@
 					ny = Math.min(ny + yv,325)
 					if(yv>0 && ny===325)
             					yv = 0;}
-					//end jump
+					//end jumpn
+
+					//jumpb
+					if((sx1===30 && sx2===300 && sx3 ===580)===false){
+					if(by===325){
+						yu = 0
+					}
+					if(this.inputs.keyboard.up && by===325){
+							yu -= 5
+					}						
+					if(by<325){
+						yu = yu + 0.3;
+					}
+					
+					bx = bx
+					by = Math.min(by + yu,325)
+					if(yu>0 && by===325)
+            					yu = 0;}
+					//end jumpb
+
+
+					
 					if(this.inputs.keyboard.down){
 						
 									
@@ -493,6 +544,10 @@
 					this.mytree1.offset(0,0);
 					this.mytree1.update();	
 
+					this.mystone.position(zx,zy);
+					this.mystone.offset(0,0);
+					this.mystone.update();	
+					
 					this.mymine1.position(px1,py1);
 					this.mymine1.offset(0,0);
 					this.mymine1.update();
