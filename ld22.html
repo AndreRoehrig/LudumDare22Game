@@ -69,9 +69,9 @@
 				stone = this.mystone = this.scene.Sprite("stone.png",{
 					"layer": this.layer,
 					"x": 600, 	//X position of sprite
-					"y": 170, 	//Y position of sprite
-					"w": 200, 	//width of sprite.
-					"h": 200 	//height of sprite.
+					"y": 425, 	//Y position of sprite
+					"w": 150, 	//width of sprite.
+					"h": 150 	//height of sprite.
 				});
 				
 				mine1 = this.mymine1 = this.scene.Sprite("tellermine.png",{
@@ -528,6 +528,12 @@
 						{by-=1}
 					
 					//deko
+
+					if(ox<=-400 && (px1 <=800 || px1>=1600)&& (px2 <=800 || px2>=1600)&& (px3 <=800 || px3>=1600)&& (px4 <=800 || px4>=1600)&& (px5 <=800 || px5>=1600)&& (px6 <=800 || px6>=1600)&& (px7 <=800 || px7>=1600)&& (px8 <=800 || px8>=1600)&& (px9 <=800 || px9>=1600))
+						{ox = 800+(Math.random()*800)}
+
+					if(zx<=-150 && (px1 <=800 || px1>=1600)&& (px2 <=800 || px2>=1600)&& (px3 <=800 || px3>=1600)&& (px4 <=800 || px4>=1600)&& (px5 <=800 || px5>=1600)&& (px6 <=800 || px6>=1600)&& (px7 <=800 || px7>=1600)&& (px8 <=800 || px8>=1600)&& (px9 <=800 || px9>=1600))
+						{zx = 800+(Math.random()*800)}
 						
 					//tell them
 					this.myzombie.position(nx,ny);
