@@ -20,6 +20,7 @@
 		<script type="text/javascript">
 		//declare sprites
 		var zombie;
+		var bloodzombie;
 		var background1;
 		var tree1;
 		var mine1;
@@ -114,7 +115,7 @@
 
 				mine7 = this.mymine7 = this.scene.Sprite("tellermine.png",{
 					"layer": this.layer,
-					"x": 1500, 	//X position of sprite
+					"x": 7200, 	//X position of sprite
 					"y": 500, 	//Y position of sprite
 					"w": 58, 	//width of sprite.
 					"h": 31 	//height of sprite.
@@ -122,7 +123,7 @@
 
 				mine8 = this.mymine8 = this.scene.Sprite("tellermine.png",{
 					"layer": this.layer,
-					"x": 1500, 	//X position of sprite
+					"x": 7260, 	//X position of sprite
 					"y": 500, 	//Y position of sprite
 					"w": 58, 	//width of sprite.
 					"h": 31 	//height of sprite.
@@ -130,7 +131,7 @@
 
 				mine9 = this.mymine9 = this.scene.Sprite("tellermine.png",{
 					"layer": this.layer,
-					"x": 1500, 	//X position of sprite
+					"x": 7320, 	//X position of sprite
 					"y": 500, 	//Y position of sprite
 					"w": 58, 	//width of sprite.
 					"h": 31 	//height of sprite.
@@ -138,7 +139,7 @@
 
 				stary1 = this.mystary1 = this.scene.Sprite("staryellow.png",{
 					"layer": this.layer,
-					"x": 12000, 	//X position of sprite
+					"x": 20000, 	//X position of sprite
 					"y": 125, 	//Y position of sprite
 					"w": 200, 	//width of sprite.
 					"h": 200 	//height of sprite.
@@ -146,7 +147,7 @@
 
 				stary2 = this.mystary2 = this.scene.Sprite("staryellow.png",{
 					"layer": this.layer,
-					"x": 12270, 	//X position of sprite
+					"x": 20270, 	//X position of sprite
 					"y": 0, 	//Y position of sprite
 					"w": 200, 	//width of sprite.
 					"h": 200 	//height of sprite.
@@ -154,7 +155,7 @@
 
 				stary3 = this.mystary3 = this.scene.Sprite("staryellow.png",{
 					"layer": this.layer,
-					"x": 12550, 	//X position of sprite
+					"x": 20550, 	//X position of sprite
 					"y": 125, 	//Y position of sprite
 					"w": 200, 	//width of sprite.
 					"h": 200 	//height of sprite.
@@ -188,6 +189,15 @@
 				zombie = this.myzombie = this.scene.Sprite("zombie.png",{
 					"layer": this.layer,
 					"x": 20, 	//X position of sprite
+					"y": 325, 	//Y position of sprite
+					"w": 160, 	//width of sprite.
+					"h": 200 	//height of sprite.
+
+				});
+
+				bloodzombie = this.mybloodzombie = this.scene.Sprite("bloodzombie.png",{
+					"layer": this.layer,
+					"x": -200, 	//X position of sprite
 					"y": 325, 	//Y position of sprite
 					"w": 160, 	//width of sprite.
 					"h": 200 	//height of sprite.
@@ -235,6 +245,9 @@
 					//get current x and y.
 					nx = this.myzombie.x;
 					ny = this.myzombie.y;
+
+					bx = this.mybloodzombie.x;
+					by = this.mybloodzombie.y;
 
 					mx = this.mybackground1.x;
 					my = this.mybackground1.y;
@@ -299,6 +312,20 @@
 						
 						
 					}
+					
+					if(this.inputs.keyboard.right){this.mybloodzombie.rotate((Math.random()-0.5)*0.02);
+						if(this.mybloodzombie.angle >0.1){
+							this.mybloodzombie.rotate(-0.01)
+							}
+						if(this.mybloodzombie.angle <(-0.1)){
+							this.mybloodzombie.rotate(0.01)
+
+						
+
+
+						}
+							}
+
 					if(this.inputs.keyboard.right){
 						ox -= 2.5
 						px1 -= 2.5
@@ -307,6 +334,9 @@
 						px4 -= 2.5
 						px5 -= 2.5
 						px6 -= 2.5
+						px7 -= 2.5
+						px8 -= 2.5
+						px9 -= 2.5
 						if(sx4>30){
 							sx4-=5
 							sx5-=5
@@ -320,6 +350,11 @@
 							}
 						if(this.myzombie.angle <(-0.1)){
 							this.myzombie.rotate(0.01)
+
+						
+
+
+						
 							}
 					}
 					//jump
@@ -379,6 +414,30 @@
 						ticker.pause();
 					}
 
+					if((this.mymine7.isPointIn(62, 500)&& ny === 325)||(this.mymine7.isPointIn(138, 500)&& ny === 325)){
+						qx = 20;
+						
+						
+					}
+
+					if((this.mymine8.isPointIn(62, 500)&& ny === 325)||(this.mymine8.isPointIn(138, 500)&& ny === 325)){
+						qx = 20;
+						
+						
+					}
+					
+					if((this.mymine9.isPointIn(62, 500)&& ny === 325)||(this.mymine9.isPointIn(138, 500)&& ny === 325)){
+						qx = 20;
+						
+						
+					}	
+
+					if(px9+58 < 50 && sx4>30 ) {
+						qx=-1500;
+						rx=-1500;
+						bx=20;
+						nx=-500		}   				
+
 					var star1= false
 					var star2= false
 					var star3= false
@@ -408,15 +467,23 @@
 					}
 						}
 
-					if(sx1===30 && sx2===300 && sx3 ===580)
-						ny -=1
+					if(sx4<=30){
+						if(this.inputs.keyboard.right && bx <=330)
+							{bx +=1}
 					
+					}
+
+					if(sx1===30 && sx2===300 && sx3===580 && bx>=330)
+						{by-=1}
 					
 					//deko
 						
 					//tell them
 					this.myzombie.position(nx,ny);
 					this.myzombie.update();
+
+					this.mybloodzombie.position(bx,by);
+					this.mybloodzombie.update();
 					
 					this.mybackground1.position(mx,my);
 					this.mybackground1.offset(0,0);
