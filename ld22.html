@@ -4,8 +4,8 @@
 		<title>LudumDare 22</title> 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 		<style type="text/css"> 
-			  body {margin:0;padding:0; background-color: #110;}
-			  div {margin:0 auto;max-width:1280px;}
+			body {margin:0;padding:0; background-color: #110;}
+			div {margin:0 auto;max-width:1280px;}
 
 			.sjs {
     			background:#f1f4fe;
@@ -28,6 +28,12 @@
 		var mine4;
 		var mine5;
 		var mine6;
+		var starr1;
+		var starr2;
+		var starr3;
+		var stary1;
+		var stary2;
+		var stary3;
 		var boom;
 		var gameover;
 
@@ -40,7 +46,7 @@
 
 				//sprites
 				background1 = this.mybackground1 = this.scene.Sprite("background.png",{
-					"layer": this.layer, //Layer zombie will be displayed in.
+					"layer": this.layer,
 					"x": 0, 	//X position of sprite
 					"y": 0, 	//Y position of sprite
 					"w": 800, 	//width of sprite.
@@ -48,7 +54,7 @@
 				});
 				
 				tree1 = this.mytree1 = this.scene.Sprite("tree1.png",{
-					"layer": this.layer, //Layer zombie will be displayed in.
+					"layer": this.layer,
 					"x": 600, 	//X position of sprite
 					"y": 170, 	//Y position of sprite
 					"w": 400, 	//width of sprite.
@@ -56,7 +62,7 @@
 				});
 				
 				mine1 = this.mymine1 = this.scene.Sprite("tellermine.png",{
-					"layer": this.layer, //Layer zombie will be displayed in.
+					"layer": this.layer,
 					"x": 3000, 	//X position of sprite
 					"y": 500, 	//Y position of sprite
 					"w": 58, 	//width of sprite.
@@ -64,7 +70,7 @@
 				});
 
 				mine2 = this.mymine2 = this.scene.Sprite("tellermine.png",{
-					"layer": this.layer, //Layer zombie will be displayed in.
+					"layer": this.layer,
 					"x": 3150, 	//X position of sprite
 					"y": 500, 	//Y position of sprite
 					"w": 58, 	//width of sprite.
@@ -72,7 +78,7 @@
 				});
 
 				mine3 = this.mymine3 = this.scene.Sprite("tellermine.png",{
-					"layer": this.layer, //Layer zombie will be displayed in.
+					"layer": this.layer,
 					"x": 3300, 	//X position of sprite
 					"y": 500, 	//Y position of sprite
 					"w": 58, 	//width of sprite.
@@ -80,7 +86,7 @@
 				});
 
 				mine4 = this.mymine4 = this.scene.Sprite("tellermine.png",{
-					"layer": this.layer, //Layer zombie will be displayed in.
+					"layer": this.layer,
 					"x": 1000, 	//X position of sprite
 					"y": 500, 	//Y position of sprite
 					"w": 58, 	//width of sprite.
@@ -88,7 +94,7 @@
 				});
 
 				mine5 = this.mymine5 = this.scene.Sprite("tellermine.png",{
-					"layer": this.layer, //Layer zombie will be displayed in.
+					"layer": this.layer,
 					"x": 1500, 	//X position of sprite
 					"y": 500, 	//Y position of sprite
 					"w": 58, 	//width of sprite.
@@ -96,15 +102,64 @@
 				});
 
 				mine6 = this.mymine6 = this.scene.Sprite("tellermine.png",{
-					"layer": this.layer, //Layer zombie will be displayed in.
+					"layer": this.layer,
 					"x": 1000, 	//X position of sprite
 					"y": 500, 	//Y position of sprite
 					"w": 58, 	//width of sprite.
 					"h": 31 	//height of sprite.
 				});
 
+				stary1 = this.mystary1 = this.scene.Sprite("staryellow.png",{
+					"layer": this.layer,
+					"x": 301, 	//X position of sprite
+					"y": 125, 	//Y position of sprite
+					"w": 200, 	//width of sprite.
+					"h": 200 	//height of sprite.
+				});
+
+				stary2 = this.mystary2 = this.scene.Sprite("staryellow.png",{
+					"layer": this.layer,
+					"x": 300, 	//X position of sprite
+					"y": 0, 	//Y position of sprite
+					"w": 200, 	//width of sprite.
+					"h": 200 	//height of sprite.
+				});
+
+				stary3 = this.mystary3 = this.scene.Sprite("staryellow.png",{
+					"layer": this.layer,
+					"x": 580, 	//X position of sprite
+					"y": 125, 	//Y position of sprite
+					"w": 200, 	//width of sprite.
+					"h": 200 	//height of sprite.
+				});				
+
+				starr1 = this.mystarr1 = this.scene.Sprite("starred.png",{
+					"layer": this.layer,
+					"x": 3000, 	//X position of sprite
+					"y": 125, 	//Y position of sprite
+					"w": 200, 	//width of sprite.
+					"h": 200 	//height of sprite.
+				});
+
+				starr2 = this.mystarr2 = this.scene.Sprite("starred.png",{
+					"layer": this.layer,
+					"x": 5800, 	//X position of sprite
+					"y": 125, 	//Y position of sprite
+					"w": 200, 	//width of sprite.
+					"h": 200 	//height of sprite.
+				});
+
+				starr3 = this.mystarr3 = this.scene.Sprite("starred.png",{
+					"layer": this.layer,
+					"x": 3000, 	//X position of sprite
+					"y": 0, 	//Y position of sprite
+					"w": 200, 	//width of sprite.
+					"h": 200 	//height of sprite.
+				});
+
+
 				zombie = this.myzombie = this.scene.Sprite("zombie.png",{
-					"layer": this.layer, //Layer zombie will be displayed in.
+					"layer": this.layer,
 					"x": 20, 	//X position of sprite
 					"y": 325, 	//Y position of sprite
 					"w": 160, 	//width of sprite.
@@ -113,7 +168,7 @@
 				});
 				
 				boom = this.myboom = this.scene.Sprite("boom.png",{
-					"layer": this.layer, //Layer zombie will be displayed in.
+					"layer": this.layer,
 					"x": 10000, 	//X position of sprite
 					"y": 275, 	//Y position of sprite
 					"w": 400, 	//width of sprite.
@@ -122,7 +177,7 @@
 				});
 
 				gameover = this.mygameover = this.scene.Sprite("gameover.png",{
-					"layer": this.layer, //Layer zombie will be displayed in.
+					"layer": this.layer,
 					"x": 10000, 	//X position of sprite
 					"y": 100, 	//Y position of sprite
 					"w": 800, 	//width of sprite.
@@ -177,6 +232,24 @@
 
 					px6 = this.mymine6.x;
 					py6 = this.mymine6.y;
+
+					sx1 = this.mystarr1.x;
+					sy1 = this.mystarr1.y;
+
+					sx2 = this.mystarr2.x;
+					sy2 = this.mystarr2.y;
+
+					sx3 = this.mystarr3.x;
+					sy3 = this.mystarr3.y;
+					
+					sx4 = this.mystary1.x;
+					sy4 = this.mystary1.y;
+
+					sx5 = this.mystary2.x;
+					sy5 = this.mystary2.y;
+
+					sx6 = this.mystary3.x;
+					sy6 = this.mystary3.y;
 					
 					qx = this.myboom.x;
 					qy = this.myboom.y;
@@ -198,6 +271,10 @@
 						px4 -= 2.5
 						px5 -= 2.5
 						px6 -= 2.5
+						if(sx4>30){
+							sx4-=2.5}
+						
+							
 							this.myzombie.rotate((Math.random()-0.5)*0.02);
 						if(this.myzombie.angle >0.1){
 							this.myzombie.rotate(-0.01)
@@ -207,6 +284,7 @@
 							}
 					}
 					//jump
+					if((sx1===30 && sx2===300 && sx3 ===580)===false){
 					if(ny===325){
 						yv = 0
 					}
@@ -220,7 +298,7 @@
 					nx = nx
 					ny = Math.min(ny + yv,325)
 					if(yv>0 && ny===325)
-            					yv = 0;
+            					yv = 0;}
 					//end jump
 					if(this.inputs.keyboard.down){
 						
@@ -262,9 +340,37 @@
 						ticker.pause();
 					}
 
-
+					var star1= false
+					var star2= false
+					var star3= false
+					
 					
 
+					if(sx4<=30){
+					if(this.inputs.mouse.position.x < 230 && this.inputs.mouse.position.x > 30 && this.inputs.mouse.position.y > 125 && 						this.inputs.mouse.position.y < 325 && this.inputs.mousedown
+					){
+						sx1 = 30
+						sx4 = -1000
+						
+					}
+
+					if(this.inputs.mouse.position.x < 500 && this.inputs.mouse.position.x > 300 && this.inputs.mouse.position.y > 0 && 						this.inputs.mouse.position.y < 200 && this.inputs.mousedown
+					){
+						sx2 = 300
+						sy2 = 0
+					}
+
+					if(this.inputs.mouse.position.x < 780 && this.inputs.mouse.position.x > 580 && this.inputs.mouse.position.y > 125 && 						this.inputs.mouse.position.y < 325 && this.inputs.mousedown
+					){
+						sx3 = 580
+						sy3 = 125
+						
+						
+					}
+						}
+
+					if(sx1===30 && sx2===300 && sx3 ===580)
+						ny -=1
 					
 					
 					//deko
@@ -304,6 +410,30 @@
 					this.mymine6.position(px6,py6);
 					this.mymine6.offset(0,0);
 					this.mymine6.update();
+
+					this.mystarr1.position(sx1,sy1);
+					this.mystarr1.offset(0,0);
+					this.mystarr1.update();
+
+					this.mystarr2.position(sx2,sy2);
+					this.mystarr2.offset(0,0);
+					this.mystarr2.update();
+
+					this.mystarr3.position(sx3,sy3);
+					this.mystarr3.offset(0,0);
+					this.mystarr3.update();
+
+					this.mystary1.position(sx4,sy4);
+					this.mystary1.offset(0,0);
+					this.mystary1.update();
+
+					this.mystary2.position(sx5,sy5);
+					this.mystary2.offset(0,0);
+					this.mystary2.update();
+
+					this.mystary3.position(sx6,sy6);
+					this.mystary3.offset(0,0);
+					this.mystary3.update();
 					
 					this.myboom.position(qx,qy);
 					this.myboom.offset(0,0);
