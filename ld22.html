@@ -24,6 +24,7 @@
 		var tree1;
 		var mine;
 		var boom;
+		var gameover;
 
 			function Engine(scene, layer){
 				this.scene = scene;
@@ -74,6 +75,15 @@
 					"h": 400 	//height of sprite.
 
 				});
+
+				gameover = this.mygameover = this.scene.Sprite("gameover.png",{
+					"layer": this.layer, //Layer zombie will be displayed in.
+					"x": 10000, 	//X position of sprite
+					"y": 100, 	//Y position of sprite
+					"w": 800, 	//width of sprite.
+					"h": 124 	//height of sprite.
+
+				});
 				
 
 
@@ -110,6 +120,9 @@
 					
 					qx = this.myboom.x;
 					qy = this.myboom.y;
+
+					rx = this.mygameover.x;
+					ry = this.mygameover.y;
 
 
 					//Update on keyboard input
@@ -149,6 +162,7 @@
 					}
 					if((this.mymine.isPointIn(80, 500)&& ny === 325)||(this.mymine.isPointIn(138, 500)&& ny === 325)){
 						qx = 20;
+						rx = 0;
 						ticker.pause();
 					}
 
@@ -181,6 +195,10 @@
 					this.myboom.position(qx,qy);
 					this.myboom.offset(0,0);
 					this.myboom.update();	
+
+					this.mygameover.position(rx,ry);
+					this.mygameover.offset(0,0);
+					this.mygameover.update();	
 
 
 					
