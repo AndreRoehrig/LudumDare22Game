@@ -22,7 +22,12 @@
 		var zombie;
 		var background1;
 		var tree1;
-		var mine;
+		var mine1;
+		var mine2;
+		var mine3;
+		var mine4;
+		var mine5;
+		var mine6;
 		var boom;
 		var gameover;
 
@@ -50,7 +55,47 @@
 					"h": 400 	//height of sprite.
 				});
 				
-				tree1 = this.mymine = this.scene.Sprite("tellermine.png",{
+				mine1 = this.mymine1 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer, //Layer zombie will be displayed in.
+					"x": 1000, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine2 = this.mymine2 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer, //Layer zombie will be displayed in.
+					"x": 1100, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine3 = this.mymine3 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer, //Layer zombie will be displayed in.
+					"x": 1200, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine4 = this.mymine4 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer, //Layer zombie will be displayed in.
+					"x": 1000, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine5 = this.mymine5 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer, //Layer zombie will be displayed in.
+					"x": 1000, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine6 = this.mymine6 = this.scene.Sprite("tellermine.png",{
 					"layer": this.layer, //Layer zombie will be displayed in.
 					"x": 1000, 	//X position of sprite
 					"y": 500, 	//Y position of sprite
@@ -115,8 +160,23 @@
 					ox = this.mytree1.x;
 					oy = this.mytree1.y;
 					
-					px = this.mymine.x;
-					py = this.mymine.y;
+					px1 = this.mymine1.x;
+					py1 = this.mymine1.y;
+
+					px2 = this.mymine2.x;
+					py2 = this.mymine2.y;
+
+					px3 = this.mymine3.x;
+					py3 = this.mymine3.y;
+					
+					px4 = this.mymine4.x;
+					py4 = this.mymine4.y;
+
+					px5 = this.mymine5.x;
+					py5 = this.mymine5.y;
+
+					px6 = this.mymine6.x;
+					py6 = this.mymine6.y;
 					
 					qx = this.myboom.x;
 					qy = this.myboom.y;
@@ -131,7 +191,12 @@
 					}
 					if(this.inputs.keyboard.right){
 						ox -= 2.5
-						px -= 2.5
+						px1 -= 2.5
+						px2 -= 2.5
+						px3 -= 2.5
+						px4 -= 2.5
+						px5 -= 2.5
+						px6 -= 2.5
 							this.myzombie.rotate((Math.random()-0.5)*0.02);
 						if(this.myzombie.angle >0.1){
 							this.myzombie.rotate(-0.01)
@@ -160,14 +225,41 @@
 						
 									
 					}
-					if((this.mymine.isPointIn(80, 500)&& ny === 325)||(this.mymine.isPointIn(138, 500)&& ny === 325)){
+					if((this.mymine1.isPointIn(80, 500)&& ny === 325)||(this.mymine1.isPointIn(138, 500)&& ny === 325)){
 						qx = 20;
 						rx = 0;
 						ticker.pause();
 					}
 
+					if((this.mymine2.isPointIn(80, 500)&& ny === 325)||(this.mymine2.isPointIn(138, 500)&& ny === 325)){
+						qx = 20;
+						rx = 0;
+						ticker.pause();
+					}
 
+					if((this.mymine3.isPointIn(80, 500)&& ny === 325)||(this.mymine3.isPointIn(138, 500)&& ny === 325)){
+						qx = 20;
+						rx = 0;
+						ticker.pause();
+					}
 
+					if((this.mymine4.isPointIn(80, 500)&& ny === 325)||(this.mymine4.isPointIn(138, 500)&& ny === 325)){
+						qx = 20;
+						rx = 0;
+						ticker.pause();
+					}
+
+					if((this.mymine5.isPointIn(80, 500)&& ny === 325)||(this.mymine5.isPointIn(138, 500)&& ny === 325)){
+						qx = 20;
+						rx = 0;
+						ticker.pause();
+					}
+					
+					if((this.mymine6.isPointIn(80, 500)&& ny === 325)||(this.mymine6.isPointIn(138, 500)&& ny === 325)){
+						qx = 20;
+						rx = 0;
+						ticker.pause();
+					}
 
 
 					
@@ -188,9 +280,29 @@
 					this.mytree1.offset(0,0);
 					this.mytree1.update();	
 
-					this.mymine.position(px,py);
-					this.mymine.offset(0,0);
-					this.mymine.update();
+					this.mymine1.position(px1,py1);
+					this.mymine1.offset(0,0);
+					this.mymine1.update();
+
+					this.mymine2.position(px2,py2);
+					this.mymine2.offset(0,0);
+					this.mymine2.update();
+
+					this.mymine3.position(px3,py3);
+					this.mymine3.offset(0,0);
+					this.mymine3.update();
+
+					this.mymine4.position(px4,py4);
+					this.mymine4.offset(0,0);
+					this.mymine4.update();
+
+					this.mymine5.position(px5,py5);
+					this.mymine5.offset(0,0);
+					this.mymine5.update();
+
+					this.mymine6.position(px6,py6);
+					this.mymine6.offset(0,0);
+					this.mymine6.update();
 					
 					this.myboom.position(qx,qy);
 					this.myboom.offset(0,0);
