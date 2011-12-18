@@ -19,6 +19,7 @@
 		<script src="lib/collision.js"></script>
 		<script type="text/javascript">
 		//declare sprites
+		var intro;		
 		var zombie;
 		var bloodzombie;
 		var background1;
@@ -50,6 +51,14 @@
 				
 
 				//sprites
+				intro = this.myintro = this.scene.Sprite("background.png",{
+					"layer": this.layer,
+					"x": 0, 	//X position of sprite
+					"y": 0, 	//Y position of sprite
+					"w": 800, 	//width of sprite.
+					"h": 600 	//height of sprite.
+				});				
+
 				background1 = this.mybackground1 = this.scene.Sprite("background.png",{
 					"layer": this.layer,
 					"x": 0, 	//X position of sprite
@@ -59,7 +68,7 @@
 				});
 				stone = this.mystone = this.scene.Sprite("stone.png",{
 					"layer": this.layer,
-					"x": 800, 	//X position of sprite
+					"x": 400, 	//X position of sprite
 					"y": 425, 	//Y position of sprite
 					"w": 150, 	//width of sprite.
 					"h": 150 	//height of sprite.
@@ -234,7 +243,13 @@
 				});
 				
 
-
+				intro = this.myintro = this.scene.Sprite("intro.png",{
+					"layer": this.layer,
+					"x": 0, 	//X position of sprite
+					"y": 0, 	//Y position of sprite
+					"w": 800, 	//width of sprite.
+					"h": 600 	//height of sprite.
+				});
 				
 				
 				
@@ -263,6 +278,9 @@
 
 					mx = this.mybackground1.x;
 					my = this.mybackground1.y;
+
+					ax = this.myintro.x;
+					ay = this.myintro.y;
 
 					ox = this.mytree1.x;
 					oy = this.mytree1.y;
@@ -425,7 +443,10 @@
             					yu = 0;}
 					//end jumpb
 
-
+					if(this.inputs.keydown){
+						ax = -1000
+									
+					}
 					
 					if(this.inputs.keyboard.down){
 						
@@ -546,7 +567,11 @@
 					
 					this.mybackground1.position(mx,my);
 					this.mybackground1.offset(0,0);
-					this.mybackground1.update();	
+					this.mybackground1.update();
+
+					this.myintro.position(ax,ay);
+					this.myintro.offset(0,0);
+					this.myintro.update();		
 					
 					this.mytree1.position(ox,oy);
 					this.mytree1.offset(0,0);
