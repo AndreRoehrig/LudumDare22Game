@@ -28,6 +28,9 @@
 		var mine4;
 		var mine5;
 		var mine6;
+		var mine7;
+		var mine8;
+		var mine9;
 		var starr1;
 		var starr2;
 		var starr3;
@@ -71,7 +74,7 @@
 
 				mine2 = this.mymine2 = this.scene.Sprite("tellermine.png",{
 					"layer": this.layer,
-					"x": 3270, 	//X position of sprite
+					"x": 3150, 	//X position of sprite
 					"y": 500, 	//Y position of sprite
 					"w": 58, 	//width of sprite.
 					"h": 31 	//height of sprite.
@@ -79,7 +82,7 @@
 
 				mine3 = this.mymine3 = this.scene.Sprite("tellermine.png",{
 					"layer": this.layer,
-					"x": 3395, 	//X position of sprite
+					"x": 3300, 	//X position of sprite
 					"y": 500, 	//Y position of sprite
 					"w": 58, 	//width of sprite.
 					"h": 31 	//height of sprite.
@@ -87,7 +90,7 @@
 
 				mine4 = this.mymine4 = this.scene.Sprite("tellermine.png",{
 					"layer": this.layer,
-					"x": 1000, 	//X position of sprite
+					"x": 1500, 	//X position of sprite
 					"y": 500, 	//Y position of sprite
 					"w": 58, 	//width of sprite.
 					"h": 31 	//height of sprite.
@@ -95,7 +98,7 @@
 
 				mine5 = this.mymine5 = this.scene.Sprite("tellermine.png",{
 					"layer": this.layer,
-					"x": 1500, 	//X position of sprite
+					"x": 1700, 	//X position of sprite
 					"y": 500, 	//Y position of sprite
 					"w": 58, 	//width of sprite.
 					"h": 31 	//height of sprite.
@@ -103,7 +106,31 @@
 
 				mine6 = this.mymine6 = this.scene.Sprite("tellermine.png",{
 					"layer": this.layer,
-					"x": 1000, 	//X position of sprite
+					"x": 1900, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine7 = this.mymine7 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer,
+					"x": 1500, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine8 = this.mymine8 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer,
+					"x": 1500, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine9 = this.mymine9 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer,
+					"x": 1500, 	//X position of sprite
 					"y": 500, 	//Y position of sprite
 					"w": 58, 	//width of sprite.
 					"h": 31 	//height of sprite.
@@ -232,6 +259,15 @@
 
 					px6 = this.mymine6.x;
 					py6 = this.mymine6.y;
+
+					px7 = this.mymine7.x;
+					py7 = this.mymine7.y;
+					
+					px8 = this.mymine8.x;
+					py8 = this.mymine8.y;
+
+					px9 = this.mymine9.x;
+					py9 = this.mymine9.y;
 
 					sx1 = this.mystarr1.x;
 					sy1 = this.mystarr1.y;
@@ -413,6 +449,18 @@
 					this.mymine6.position(px6,py6);
 					this.mymine6.offset(0,0);
 					this.mymine6.update();
+
+					this.mymine7.position(px7,py7);
+					this.mymine7.offset(0,0);
+					this.mymine7.update();
+
+					this.mymine8.position(px8,py8);
+					this.mymine8.offset(0,0);
+					this.mymine8.update();
+
+					this.mymine9.position(px9,py9);
+					this.mymine9.offset(0,0);
+					this.mymine9.update();
 
 					this.mystarr1.position(sx1,sy1);
 					this.mystarr1.offset(0,0);
