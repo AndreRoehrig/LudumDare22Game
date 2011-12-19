@@ -42,6 +42,26 @@
 		var stary3;
 		var boom;
 		var gameover;
+		var dia1;
+		var dia2;
+var dia3;
+var dia4;
+var dia5;
+var dia6;
+var dia7;
+var dia8;
+var dia9;
+		var dia10;
+		var dia11;
+		var dia12;
+		var dia13;
+		var dia14;
+	var dia15;
+	var dia16;
+	var dia17;
+
+
+
 
 			function Engine(scene, layer){
 				this.scene = scene;
@@ -68,7 +88,7 @@
 				});
 				stone = this.mystone = this.scene.Sprite("stone.png",{
 					"layer": this.layer,
-					"x": 400, 	//X position of sprite
+					"x": 500, 	//X position of sprite
 					"y": 425, 	//Y position of sprite
 					"w": 150, 	//width of sprite.
 					"h": 150 	//height of sprite.
@@ -250,6 +270,142 @@
 					"w": 800, 	//width of sprite.
 					"h": 600 	//height of sprite.
 				});
+
+				dia1 = this.mydia1 = this.scene.Sprite("dia1.png",{
+					"layer": this.layer,
+					"x": 0, 	//X position of sprite
+					"y": 575, 	//Y position of sprite
+					"w": 800, 	//width of sprite.
+					"h": 25 	//height of sprite.
+				});
+
+				dia2 = this.mydia2 = this.scene.Sprite("dia2.png",{
+					"layer": this.layer,
+					"x": 3150, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				dia3 = this.mydia3 = this.scene.Sprite("dia3.png",{
+					"layer": this.layer,
+					"x": 3300, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				dia4 = this.mydia4 = this.scene.Sprite("dia4.png",{
+					"layer": this.layer,
+					"x": 4500, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				dia5 = this.mydia5 = this.scene.Sprite("dia5.png",{
+					"layer": this.layer,
+					"x": 4700, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine6 = this.mymine6 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer,
+					"x": 4900, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine7 = this.mymine7 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer,
+					"x": 7200, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine8 = this.mymine8 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer,
+					"x": 7260, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine9 = this.mymine9 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer,
+					"x": 7320, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine2 = this.mymine2 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer,
+					"x": 3150, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine3 = this.mymine3 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer,
+					"x": 3300, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine4 = this.mymine4 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer,
+					"x": 4500, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine5 = this.mymine5 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer,
+					"x": 4700, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine6 = this.mymine6 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer,
+					"x": 4900, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine7 = this.mymine7 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer,
+					"x": 7200, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine8 = this.mymine8 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer,
+					"x": 7260, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
+
+				mine9 = this.mymine9 = this.scene.Sprite("tellermine.png",{
+					"layer": this.layer,
+					"x": 7320, 	//X position of sprite
+					"y": 500, 	//Y position of sprite
+					"w": 58, 	//width of sprite.
+					"h": 31 	//height of sprite.
+				});
 				
 				
 				
@@ -338,7 +494,9 @@
 
 					rx = this.mygameover.x;
 					ry = this.mygameover.y;
-
+					
+					dx1 = this.mydia1.x;
+					dy1 = this.mydia1.y;
 
 					//Update on keyboard input
 					if(this.inputs.keyboard.left){
@@ -647,7 +805,11 @@
 
 					this.mygameover.position(rx,ry);
 					this.mygameover.offset(0,0);
-					this.mygameover.update();	
+					this.mygameover.update();
+
+					this.mydia1.position(dx1,dy1);
+					this.mydia1.offset(0,0);
+					this.mydia1.update();	
 
 
 					
