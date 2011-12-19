@@ -71,7 +71,7 @@ var dia9;
 	var dia15;
 	var dia16;
 	var dia17;
-
+	var grass;
 
 
 
@@ -113,7 +113,13 @@ var dia9;
 					"h": 400 	//height of sprite.
 				});
 
-				
+				grass = this.mygrass = this.scene.Sprite("grass.png",{
+					"layer": this.layer,
+					"x": 0, 	//X position of sprite
+					"y": 510, 	//Y position of sprite
+					"w": 800, 	//width of sprite.
+					"h": 600 	//height of sprite.
+				});
 
 				
 				
@@ -492,7 +498,8 @@ var dia9;
 
 					px9 = this.mymine9.x;
 					py9 = this.mymine9.y;
-
+					gx = this.mygrass.x;
+					gy = this.mygrass.y;
 					sx1 = this.mystarr1.x;
 					sy1 = this.mystarr1.y;
 
@@ -816,13 +823,13 @@ var dia9;
 					if(px1<-4500)
 						dx14=0
 
-					if(px1<-6000)
+					if(px1<-5500)
 						dx15=0
 					
 					if(px1<-6100)
 						dx16=0
 
-					if(sx1===30 && sx2===300 && sx3===580 && bx>=330)
+					if(px1<-6999)
 						dx17=0
 
 					if(by<-100){
@@ -905,6 +912,10 @@ var dia9;
 					this.mystarr3.position(sx3,sy3);
 					this.mystarr3.offset(0,0);
 					this.mystarr3.update();
+
+					this.mygrass.position(gx,gy);
+					this.mygrass.offset(0,0);
+					this.mygrass.update();
 
 					this.mystary1.position(sx4,sy4);
 					this.mystary1.offset(0,0);
