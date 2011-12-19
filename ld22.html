@@ -263,13 +263,6 @@ var dia9;
 				});
 				
 
-				intro = this.myintro = this.scene.Sprite("intro.png",{
-					"layer": this.layer,
-					"x": 0, 	//X position of sprite
-					"y": 0, 	//Y position of sprite
-					"w": 800, 	//width of sprite.
-					"h": 600 	//height of sprite.
-				});
 
 				dia1 = this.mydia1 = this.scene.Sprite("dia1.png",{
 					"layer": this.layer,
@@ -414,6 +407,14 @@ var dia9;
 					"w": 800, 	//width of sprite.
 					"h": 600 	//height of sprite.
 				});
+
+				outro = this.myoutro = this.scene.Sprite("outro.png",{
+					"layer": this.layer,
+					"x": -1000, 	//X position of sprite
+					"y": 0, 	//Y position of sprite
+					"w": 800, 	//width of sprite.
+					"h": 600 	//height of sprite.
+				});
 				
 				//ticker method
 				this.setTicker = function(ticker){
@@ -443,6 +444,9 @@ var dia9;
 
 					ax = this.myintro.x;
 					ay = this.myintro.y;
+
+					cx = this.myoutro.x;
+					cy = this.myoutro.y;
 
 					ox = this.mytree1.x;
 					oy = this.mytree1.y;
@@ -794,20 +798,24 @@ var dia9;
 					if(px1<-3100)
 						dx12=0
 
-					if(px1<-3400)
+					if(px1<-3700)
 						dx13=0
 
-					if(px1<-3700)
+					if(px1<-4500)
 						dx14=0
 
-					if(px1<-4000)
+					if(px1<-6000)
 						dx15=0
 					
-					if(px1<-4500)
+					if(px1<-8000)
 						dx16=0
 
-					if(sx1 <=-5000)
+					if(px1 <-9800)
 						dx17=0
+
+					if(by<-100){
+						cx=0
+						ticker.pause();}
 									
 
 
@@ -824,7 +832,11 @@ var dia9;
 
 					this.myintro.position(ax,ay);
 					this.myintro.offset(0,0);
-					this.myintro.update();		
+					this.myintro.update();	
+
+					this.myoutro.position(cx,cy);
+					this.myoutro.offset(0,0);
+					this.myoutro.update();		
 					
 					this.mytree1.position(ox,oy);
 					this.mytree1.offset(0,0);
