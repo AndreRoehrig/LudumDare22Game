@@ -15,10 +15,22 @@
 			</style>
 
 		</style> 
+
+		 <audio autoplay="autoplay">
+  		<source src="music.ogg" type="audio/ogg" />
+  		
+  		Your browser does not support the audio element.
+		</audio>  
+
 		<script type="text/javascript" src='sprite.js'></script> 
 		<script src="lib/collision.js"></script>
+		<script src="lib/buzz.js"></script>	
 		<script type="text/javascript">
-		//declare sprites
+	
+
+
+
+//declare sprites
 		var intro;		
 		var zombie;
 		var bloodzombie;
@@ -807,10 +819,10 @@ var dia9;
 					if(px1<-6000)
 						dx15=0
 					
-					if(px1<-8000)
+					if(px1<-6100)
 						dx16=0
 
-					if(px1 <-9800)
+					if(sx1===30 && sx2===300 && sx3===580 && bx>=330)
 						dx17=0
 
 					if(by<-100){
